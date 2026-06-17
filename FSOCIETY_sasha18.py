@@ -370,45 +370,71 @@ def show_win(friend_name):
     print()
     time.sleep(2)
 
-    # ── ФИНАЛЬНЫЙ BSOD ──────────────────────────────────────────────────────
+    # ── ФИНАЛЬНЫЙ ЭКРАН: цифры 4928 на весь экран ───────────────────────────
     clear()
     print(Back.BLUE + Fore.WHITE + Style.BRIGHT)
+
+    digits_art = [
+        "  ██╗  ██╗ █████╗  █████╗  █████╗  ",
+        "  ██║  ██║██╔══██╗██╔══██╗██╔══██╗ ",
+        "  ███████║╚██████║╚██████║╚╚█████╔╝ ",
+        "  ╚════██║ ╚═══██║ ╚═══██║ ██╔══██╗ ",
+        "       ██║ █████╔╝ █████╔╝ ╚█████╔╝ ",
+        "       ╚═╝ ╚════╝  ╚════╝   ╚════╝  ",
+    ]
+
+    # Блок цифр 4 9 2 8 в ASCII-арт
+    four = [
+        "██╗  ██╗",
+        "██║  ██║",
+        "███████║",
+        "╚════██║",
+        "     ██║",
+        "     ╚═╝",
+    ]
+    nine = [
+        " █████╗ ",
+        "██╔══██╗",
+        "╚██████║",
+        " ╚═══██║",
+        " █████╔╝",
+        " ╚════╝ ",
+    ]
+    two = [
+        "██████╗ ",
+        "╚════██╗",
+        " █████╔╝",
+        "██╔═══╝ ",
+        "███████╗",
+        "╚══════╝",
+    ]
+    eight = [
+        " █████╗ ",
+        "██╔══██╗",
+        "╚█████╔╝",
+        "██╔══██╗",
+        "╚█████╔╝",
+        " ╚════╝ ",
+    ]
+
     w = 78
-    def bline(text="", center=False):
-        if center:
-            text = text.center(w)
-        else:
-            text = text.ljust(w)
-        print(" " + text)
-
-    def bwrap(text, indent="   "):
-        max_width = max(w - len(indent) * 2, 10)
-        for sub in (textwrap.wrap(text, width=max_width) or [""]):
-            bline(indent + sub, center=True)
-
-    print(" " + " " * w)
-    bline()
-    bline("   :)", )
-    bline()
-    bwrap("С днём рождения, Александр!")
-    bline()
-    bwrap("Желаю тебе крепкого хп, хорошего лака и чтобы всегда сбывались твои мечты!")
-    bwrap("Чтобы в Расте всегда клановую нычку находил.")
-    bwrap("Чтобы в Тундре за раунд по 100к экспы выносил.")
-    bwrap("Чтобы в ГД инпут-лага вообще не было, а в КС регало без утюга за тридевять земель.")
-    bwrap("Пусть вообще всё в жизни будет гуд и чиназес, ну и... чтобы по жопе не били! С праздником!")
-    bline()
-    bline("   Нажмите любую клавишу, чтобы открыть главный сюрприз...", center=True)
-    bline()
-    bline()
-    bline("   STOP: 0x000000A7_HAPPY_BIRTHDAY_SASHA")
-    bline("   gift_system.sys — INSANE_PARTY_MODE_ENGAGED")
-    bline()
-    print(" " + " " * w)
+    gap = "    "
+    print()
+    print()
+    print()
+    print()
+    for row in range(6):
+        line = gap + four[row] + gap + nine[row] + gap + two[row] + gap + eight[row]
+        print(Back.BLUE + Fore.WHITE + Style.BRIGHT + line.center(w))
+    print()
+    print()
+    press = "[ Нажми Enter, чтобы открыть сюрприз ]"
+    print(Back.BLUE + Fore.WHITE + Style.BRIGHT + press.center(w))
+    print()
     print(RST, end="")
 
     input()
-    webbrowser.open("https://youtu.be/vfNttI-qv_Q")
+    webbrowser.open("https://github.com/fsociety00protocol/neratkadlyasashi")
 
 # ── промпт ввода ──────────────────────────────────────────────────────────────
 
